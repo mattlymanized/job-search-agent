@@ -1,0 +1,13 @@
+# Your job search folder holds real personal data. Keep it out of any repo.
+# These names match the files setup-job-search creates.
+job-search-config.md
+dream-job-criteria.md
+company-scoring-methodology.md
+proof-points.md
+rubric.json
+*.xlsx
+my-job-search/
+
+# Tooling
+__pycache__/
+.DS_Store

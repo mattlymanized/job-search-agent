@@ -1,0 +1,11 @@
+{
+  "name": "job-search-agent",
+  "version": "0.1.0",
+  "description": "Set up a personal job search system: criteria, scoring rubric, verified proof points, a tracker spreadsheet, a daily role scan, interview prep and company research.",
+  "author": {
+    "name": "Matt Lyman"
+  },
+  "repository": "https://github.com/mattlymanized/job-search-agent",
+  "license": "MIT",
+  "keywords": ["job-search", "interview-prep", "career", "tracker", "skills"]
+}
