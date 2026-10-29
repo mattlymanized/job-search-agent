@@ -98,7 +98,13 @@ If something is missing and they want it, tell them to connect it in their own s
 
 ## Step 7: Record alert sources
 
-Ask which job alert emails they get. Offer the ones in the config template. Suggest setting up saved alerts on LinkedIn and one or two niche boards for their function if they have none. Update the "Job alert emails I receive" section. Tick "Alert sources recorded".
+Ask the user which job alert emails they get or want swept. Do not assume any. LinkedIn, Built In, Jobright and The Ladders are only examples from the config template, and the user may use none of them, some of them, or entirely different senders.
+
+1. Ask: "Which job boards or sites send you alert emails today? Name any, including ones not on this list." Show the four examples as prompts, not a menu.
+2. For each sender they name that is not an example, ask for the sender address or domain, and for any subject line that marks a job alert, so the scan can find it. Record these under "Other senders to sweep".
+3. For each example they confirm, tick it in the config. Leave the rest unticked.
+4. If they get no alerts, suggest saved alerts on one or two boards that fit their function, then record what they set up, or "none".
+5. Update the "Job alert emails I receive" section. Tick "Alert sources recorded".
 
 ## Step 8: Prove it works
 
