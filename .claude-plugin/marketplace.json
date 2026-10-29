@@ -1,0 +1,14 @@
+{
+  "name": "job-search-agent",
+  "description": "Claude skills for running a structured job search: setup, daily scan, interview prep and company research.",
+  "owner": {
+    "name": "Matt Lyman"
+  },
+  "plugins": [
+    {
+      "name": "job-search-agent",
+      "source": "./plugins/job-search-agent",
+      "description": "Set up a personal job search system: criteria, scoring rubric, verified proof points, a tracker spreadsheet, a daily role scan, interview prep and company research."
+    }
+  ]
+}
