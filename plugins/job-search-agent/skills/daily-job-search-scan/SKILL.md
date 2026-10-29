@@ -56,6 +56,8 @@ Then:
 
 These are leads, not applications. Never add one as Applied. They follow the same screen, score and file path as any new find.
 
+The first four rows are examples of common senders. Sweep only the sources the user ticked or listed in the config. If a source is not in the config, skip it.
+
 | Source | Query to start from | Notes |
 |--------|---------------------|-------|
 | LinkedIn alerts | `from:jobalerts-noreply@linkedin.com OR from:jobs-noreply@linkedin.com newer_than:3d` | Resolve each role on the company's own site. Never open linkedin.com. |

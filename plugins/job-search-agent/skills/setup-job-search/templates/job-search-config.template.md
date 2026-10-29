@@ -50,14 +50,14 @@ The skills enforce these whatever this file says. They exist to protect you.
 
 ## Job alert emails I receive
 
-Check the ones you actually get. The daily scan only sweeps the ones checked here, and only after asking you each run.
+These four are examples, not requirements. Check the ones you actually get and list any other senders below. The daily scan only sweeps the ones checked here, and only after asking you each run.
 
 - [ ] Application confirmation and response emails (any sender)
 - [ ] LinkedIn job alerts
 - [ ] Built In job alerts
 - [ ] Jobright alerts
 - [ ] The Ladders alerts
-- Other senders to sweep: <sender or domain, one per line, or "none">
+- Other senders to sweep: <sender address or domain, plus a subject line that marks a job alert, one per line, or "none">
 
 ## Where I search
 
