@@ -115,7 +115,7 @@ The [examples](examples/) folder has a filled-in criteria file and proof points 
 - It was built around one person's search for a senior role at a technology company, so the default job boards and alert senders lean that way. Edit the criteria and the search scope for your field.
 - The default rubric weights are a starting point. Move them.
 - Posting verification depends on how job sites render today. They change. If a check starts giving wrong answers, open an issue.
-- The plugin passes Claude Code's own validator, and installing from a downloaded folder (Route 2) loads all five skills. Nobody has run setup end to end on a fresh machine yet, so expect rough edges.
+- The plugin passes Claude Code's own validator, and installing from a downloaded folder (Route 2) loads all five skills. A scripted dry run of setup (every file, path and script it references) passes, but nobody has run it with a live session on a fresh machine yet, so expect rough edges.
 - Sourcing rules make the research slower than a plain chat answer. That is on purpose.
 
 ## Contributing

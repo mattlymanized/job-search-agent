@@ -50,7 +50,9 @@ Then draft `dream-job-criteria.md` from `templates/dream-job-criteria.template.m
 
 Show the default 12 categories and weights from `templates/company-scoring-methodology.template.md`. Ask which two or three matter most to this person and which matter least. Move weights to match. They must add up to 100. Offer to rename or drop categories, and warn that the tracker headers have to match the rubric.
 
-Confirm the score bands and the statuses they map to. Write `company-scoring-methodology.md`. If the weights or names differ from the default, write a `rubric.json` into the scratch area with a list of `{"name": ..., "weight": ...}` objects for Step 5. Tick "Scoring rubric written and approved".
+Confirm the score bands and the statuses they map to.
+
+Before writing `company-scoring-methodology.md`, edit the table in it so the category names and weights are exactly what the user chose, and check that the weights total 100. The daily scan reads its weights from this file, so it has to agree with the tracker headers. If the weights or names differ from the default, also write `rubric.json` into the job search folder, a list of `{"name": ..., "weight": ...}` objects in the same order as the table. Step 5 uses it, and it lets the tracker be rebuilt later. Tick "Scoring rubric written and approved".
 
 ## Step 4: Build verified proof points
 
@@ -66,13 +68,13 @@ Do not round up. Do not invent. Do not fill a gap with something plausible. Writ
 
 ## Step 5: Build the tracker
 
-Run the builder that sits next to this SKILL.md:
+Run the builder from this skill's own folder, the directory that holds this SKILL.md. It is not the job search folder, so use the skill folder's full path and give the job search folder as a full path too:
 
 ```
-python3 -I scripts/build_tracker.py --out "<job search folder>/Job Search Tracker.xlsx"
+python3 -I "<skill folder>/scripts/build_tracker.py" --out "<job search folder>/Job Search Tracker.xlsx"
 ```
 
-Add `--rubric rubric.json` if Step 3 produced one. The script needs `openpyxl` (`pip install openpyxl` if it is missing). It will not overwrite an existing tracker. Do not pass `--force` unless the user asks, and say what it will destroy first.
+Add `--rubric "<job search folder>/rubric.json"` if Step 3 produced one. The script needs `openpyxl` (`pip install openpyxl` if it is missing). It will not overwrite an existing tracker. Do not pass `--force` unless the user asks, and say what it will destroy first.
 
 The tracker has three tabs.
 
