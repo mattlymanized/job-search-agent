@@ -54,7 +54,7 @@ A partial "looks good" is not a go. If the user changes one section, revise only
 - Name gaps directly. Do not build a bridge for experience the user does not have.
 - Follow the writing style notes in the config for anything you draft.
 - Give one recommendation per decision, not a menu.
-- Target two pages. If it runs over, tell the user before cutting anything beyond the plan, and cut the lowest-relevance bullets first.
+- Target two pages. If it runs over, tighten spacing first, since that changes layout and not content. Tell the user before cutting any content beyond the plan, and cut the lowest-relevance bullets first.
 - Keep real titles when the posting is more junior than the user's last roles. Signal the intent in the summary instead and flag the level gap in chat.
 - Cut a bullet only to make room or because it does not serve the role. Say which and why.
 - Keep wording verbatim from the master resume unless the change is listed in the chat proposal or recorded under Approved wording changes in the config.
@@ -102,7 +102,7 @@ File names: `<Name>-Resume-<Company>.pdf` and `<Name>-Resume-<Company>-ATS.pdf`.
 
 The designed PDF is a clean one-column layout: centered name and contact line, one accent color for the rules, centered bold section heads, company in bold, title in italics with dates right-aligned.
 
-The ATS PDF is plain on purpose: single column, left aligned, Arial or Liberation Sans, no tables, columns, icons, text boxes or graphics. Headings are Summary, Skills, Experience, Education and any extra section. Contact details sit in the body, never in a header or footer. Every role line reads "Title | Company | Dates". If a company has several titles, give `ats_titles` so each line carries the company. Skills are comma separated. Text must be real, selectable text.
+The ATS PDF is plain on purpose: single column, left aligned, Arial or Liberation Sans, no tables, columns, icons, text boxes or graphics. Headings are Summary, Skills, Experience, Education and any extra section. Contact details sit in the body, never in a header or footer. Every role line reads "Title | Company | Dates". If a company has several titles, give `ats_titles` so each line carries the company. Skills are comma separated. Text must be real, selectable text. The script's ATS spacing is tight on purpose, because the plain layout otherwise runs a page longer than the designed file once a resume has more than a few bullets.
 
 Tell the user to send the ATS file wherever a parser is involved. The designed file loses hyphens at line wraps when text is extracted.
 
@@ -126,7 +126,12 @@ for kind, text in items:  # every string you placed on the page, tagged
 
 ### 6d. Save and deliver
 
-Save both files to the output folder named in the config. For a local folder, write them there. For a folder in a connected drive, upload both as PDFs without converting them, into that folder only. For "chat only", skip saving. In every case, also send both files in the conversation.
+Save both files to the output folder named in the config, and also send both files in the conversation.
+
+- A local folder is the most reliable route, including one that a drive app such as Google Drive for desktop syncs to the cloud. Write the files there with the linked computer's file tools. List the folder first, because some file tools overwrite silently. If a name is taken, add -v2 to both files of the pair.
+- A folder reached only through a drive connector is the fallback. A connector takes the file as text, so a PDF of 50 KB or more is slow to pass and easy to corrupt. Tell the user before trying, and offer the synced local folder instead.
+- If the config says "chat only", skip saving.
+- If the folder is not reachable, say so, send the files in the conversation, and tell the user to connect the folder in their app settings. Do not retry with other paths.
 
 Finish with one line: page count, where the files were saved, and anything to look at. Do not recap the steps.
 

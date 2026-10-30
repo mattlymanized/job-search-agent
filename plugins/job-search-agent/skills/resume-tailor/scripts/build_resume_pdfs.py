@@ -106,13 +106,13 @@ def ats():
         add = "".join(f'<p class="tight">{e(a)}</p>' for a in C.ADDITIONAL)
         extra = f"<h2>{e(EXTRA_TITLE)}</h2>{add}"
     return f"""<!doctype html><html><head><meta charset="utf-8"><title>{e(C.NAME)} Resume</title><style>
-@page {{ size: Letter; margin: 0.6in 0.7in; }}
-body {{ font-family: Arial, "Liberation Sans", Helvetica, sans-serif; font-size:10pt; line-height:1.28; margin:0; }}
+@page {{ size: Letter; margin: 0.5in 0.65in; }}
+body {{ font-family: Arial, "Liberation Sans", Helvetica, sans-serif; font-size:10pt; line-height:1.2; margin:0; }}
 h1 {{ font-size:18pt; margin:0 0 2pt 0; }} .contact {{ margin-bottom:8pt; }}
-h2 {{ font-size:11pt; text-transform:uppercase; margin:10pt 0 4pt 0; border-bottom:0.6pt solid #000; break-after:avoid; }}
-p {{ margin:0 0 4pt 0; }} .tight {{ margin:0 0 2pt 0; }}
+h2 {{ font-size:11pt; text-transform:uppercase; margin:8pt 0 3pt 0; border-bottom:0.6pt solid #000; break-after:avoid; }}
+p {{ margin:0 0 3pt 0; }} .tight {{ margin:0 0 1.5pt 0; }}
 .rl {{ font-weight:700; margin-top:6pt; break-after:avoid; }} .rl2 {{ font-weight:700; }}
-ul {{ margin:2pt 0 0 0; padding-left:16pt; }} li {{ margin:0 0 2.5pt 0; }}
+ul {{ margin:2pt 0 0 0; padding-left:16pt; }} li {{ margin:0 0 1.8pt 0; }}
 </style></head><body>
 <h1>{e(C.NAME)}</h1><div class="contact">{e(C.CONTACT)}</div>
 <h2>Summary</h2><p>{e(C.SUMMARY_LEAD + C.SUMMARY_REST)}</p>
