@@ -8,7 +8,7 @@
     {
       "name": "job-search-agent",
       "source": "./plugins/job-search-agent",
-      "description": "Set up a personal job search system: criteria, scoring rubric, verified proof points, a tracker spreadsheet, a daily role scan, interview prep and company research."
+      "description": "Set up a personal job search system: criteria, scoring rubric, verified proof points, a tracker spreadsheet, a daily role scan, interview prep, resume tailoring and company research."
     }
   ]
 }

@@ -29,6 +29,17 @@ These names are relative to the folder that holds this config file.
 - If I ask for a file: <.docx, .pdf, or .md>
 - Writing style notes: <anything you want applied to drafts, or "none">
 
+## Resume tailoring
+
+Read by the resume-tailor skill. It writes this section with you the first time you use it.
+
+- Master resume: <where the resume you keep up to date lives: a file in this folder, or a link to a document>
+- Save tailored PDFs to: <a folder path, a folder link in a connected drive, or "chat only">
+- Always keep: <items that must appear in every version, or "none">
+- Cut by default: <items that should never ride along, such as old training or volunteering, or "none">
+- Roles I tailor for: <two to four kinds of role, one line each>
+- Approved wording changes: <rewordings you approved, with when to use each, or "none yet">
+
 ## Coaching style for interview prep
 
 These are defaults. Change them to fit how you talk.
@@ -45,6 +56,7 @@ The skills enforce these whatever this file says. They exist to protect you.
 
 - Interview prep only uses claims written in proof-points.md. No number or outcome is ever invented or rounded up.
 - If no real story exists for a topic, the skill says so instead of stretching a weak one.
+- Resume tailoring never changes titles, employers, dates, numbers or education, and never writes to your master resume.
 - Gmail sweeps are read-only and ask permission every run.
 - Rows with an in-progress pipeline status are never changed by a score.
 
