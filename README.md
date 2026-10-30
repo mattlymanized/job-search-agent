@@ -14,6 +14,7 @@ Built by Matt Lyman, with Claude.
 | `daily-job-search-scan` | Searches boards for new roles, optionally reads your job alert and application emails (read-only, asks every run), checks postings are really open, screens deal-breakers, scores each company and files it in your tracker. |
 | `interview-prep` | Researches the interviewer, predicts what they will probe, asks which of your verified stories to use for each topic, checks honest gaps, and builds a briefing in chat. |
 | `competitive-research` | A sourced, 600-word read on where a company sits in its market, with talking points and open questions. |
+| `resume-tailor` | Tailors your resume to one posting by reordering, cutting and lightly rewording what is already there. Shows you every change in chat first, then builds a designed PDF and an ATS-safe PDF and saves both to your folder. |
 | `product-research` | A deeper pass on what a company actually sells and whether its differentiation holds up against customer reviews. |
 
 ## Download and install
@@ -97,6 +98,7 @@ A few of these are not editable.
 - Interview prep only uses claims in your proof points file. It never invents or rounds up a number, and it says so when you have no real story for a topic.
 - Email sweeps are read-only. They never send, draft, label or delete. They ask your permission every run, and a scheduled run skips them.
 - A posting only counts as open when a browser has rendered the page. Search results and cached pages lie about this constantly.
+- Resume tailoring never changes a title, employer, date or number, and never writes to your master resume. It shows you every change before it builds a file.
 - A score never changes a status you set yourself. If you marked a role Applied, it stays Applied.
 - The tracker builder will not overwrite an existing file.
 
@@ -115,7 +117,7 @@ The [examples](examples/) folder has a filled-in criteria file and proof points 
 - It was built around one person's search for a senior role at a technology company, so the default job boards and alert senders lean that way. Edit the criteria and the search scope for your field.
 - The default rubric weights are a starting point. Move them.
 - Posting verification depends on how job sites render today. They change. If a check starts giving wrong answers, open an issue.
-- The plugin passes Claude Code's own validator, and installing from a downloaded folder (Route 2) loads all five skills. A scripted dry run of setup (every file, path and script it references) passes, but nobody has run it with a live session on a fresh machine yet, so expect rough edges.
+- The plugin passes Claude Code's own validator, and installing from a downloaded folder (Route 2) loads all six skills. A scripted dry run of setup (every file, path and script it references) passes, but nobody has run it with a live session on a fresh machine yet, so expect rough edges.
 - Sourcing rules make the research slower than a plain chat answer. That is on purpose.
 
 ## Contributing

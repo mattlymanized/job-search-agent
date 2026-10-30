@@ -9,6 +9,7 @@ The skills work with what they have and say plainly when something is missing. T
 | Gmail, read-only | Optional | Reads application confirmations, replies and job alert emails | You add applications to the tracker by hand |
 | A spreadsheet or file skill | Recommended | Edits the tracker while keeping its formatting | The agent edits the file directly and is more likely to lose formatting |
 | Calendar | Optional | Interview dates | You paste dates in |
+| A connected drive, such as Google Drive | Optional | Reads your master resume from a document and saves tailored PDFs to a folder you name | You point the skill at a local file and folder instead |
 
 ## How to connect something
 
