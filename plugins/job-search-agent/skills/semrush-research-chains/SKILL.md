@@ -1,11 +1,11 @@
 ---
 name: semrush-research-chains
-description: Chain Semrush MCP pulls into three workflows for researching a company before an interview or a case. Search competitors and keyword evidence, backlink authority evidence, and an approval-gated build sequence. Use when the user wants data behind an SEO, authority or competitor claim about a target company. Needs the Semrush connector.
+description: Chain a review-site scan (G2, Capterra, TrustRadius, Trustpilot) and Semrush MCP pulls into workflows for researching a company before an interview or a case. Review-site landscape, search competitors and keyword evidence, backlink authority evidence, and an approval-gated build sequence. Use when the user wants data behind an SEO, authority or competitor claim about a target company. Needs the Semrush connector.
 ---
 
 # Semrush research chains
 
-Three chains built on the Semrush MCP (tools named `mcp__Semrush__*`). Use them when the user wants data behind an SEO, authority or competitor claim about a company they are interviewing with or sizing up. Findings stay in chat until the user agrees on content. No files, pages or publishing without a clear yes.
+Four chains. Chain 0 is a free review-site scan. Chains A to C are built on the Semrush MCP (tools named `mcp__Semrush__*`). Use them when the user wants data behind an SEO, authority or competitor claim about a company they are interviewing with or sizing up. Findings stay in chat until the user agrees on content. No files, pages or publishing without a clear yes.
 
 This is research for the user's own career decision or interview prep. The user is usually not hired yet. Frame output as how they would decide and what they would ask, not as a free engagement plan for the company. Do not suggest handing the company the full plan.
 
@@ -25,11 +25,33 @@ If `job-search-config.md` exists in the working directory, read it for the user'
 
 Tag every finding: Verified (a source or tool output you read), Sampled (some pages checked, not all), or Inference (your read). Label Semrush numbers as estimates.
 
+## Chain 0: review-site scan (run first, free)
+
+Purpose: learn the competitive landscape and buyer language before spending API units, so the Semrush pulls aim at real names instead of guesses. It uses WebSearch and WebFetch, not Semrush, so it costs no units.
+
+Sites: G2, Capterra, TrustRadius, Trustpilot. G2 pages follow `https://www.g2.com/products/<slug>/reviews` and `.../competitors/alternatives`. For the others, use the URLs the user gives or the ones WebSearch returns.
+
+1. Find the target's listing on each site. Confirm it is the right company before using anything from it. Generic names collide (a search for a company with a common two-word name can surface unrelated products with similar names). Check vendor name, website and description, and say what you checked.
+2. Per site, record: listing exists or not, rating, review count, category, and listed alternatives with rating and review count. Separate real category peers from filler (work management, chat and spreadsheet tools appear on thin listings).
+3. Check the competitor side. For the top one or two named competitors, read their listings and alternatives pages and note whether the target appears as an alternative on any site. Absence is a finding. A target missing from every site, including as an alternative to its main rival, points to a weak review motion and means buyers in comparison traffic will not meet it. Label that Inference and name how you looked.
+4. Read the reviews. Record themes, competitor mentions, switching triggers and price complaints. If a listing has fewer than about 10 reviews, say the sample is too small to generalize.
+5. Pass the names to Chain A. Alternatives from review sites are seed names for `domain_domains` and `keyword_research`, and a cross-check against Semrush's organic competitors. Names in both are tier 1. Names in only one go on the research-gap list.
+
+Rules:
+- The fetch tool has a domain allowlist and may refuse URLs you construct yourself (a direct Trustpilot or TrustRadius profile URL was refused in practice). Fetch URLs the user gave or WebSearch returned. If a page is refused or returns an error, try the built-in browser pane read as text. If that fails too, mark the site not reachable and move on. Do not sign in, create an account, solve a CAPTCHA or work around a block.
+- WebFetch summarizes and can miscount. Treat ratings and review counts as approximate and re-fetch before a number goes into a decision. Two fetches of the same page can disagree by a few reviews.
+- Not appearing in WebSearch results is sampled evidence, not proof of no listing. Say which queries you ran.
+- Review-site alternatives lists are the site's own matching, not proof of who buyers compare. Label them Inference when used to name competitors.
+- Ratings across sites are not comparable. Volumes and scales differ. Trustpilot skews consumer and is thin for B2B infrastructure, so say so rather than reading much into it.
+- Quote at most one short review line, in quotation marks, with attribution. Summarize the rest. Review sites are not a backlink or authority source. Use Semrush for links.
+
+Output: a table per site (listing, rating, reviews, category, alternatives, peer or filler), the review themes, whether the target appears as an alternative to its main competitor, and the names carried into Chain A.
+
 ## Chain A: search competitors, keywords, SERPs
 
 Purpose: replace a competitor list built from a job dossier or forum threads with search evidence, and test whether category terms and comparison pages have real demand.
 
-1. `competitors_research` > `domain_organic_organic` for the target. Note who appears that the user has not named. Tier them: direct, platform, status quo, watch list.
+1. `competitors_research` > `domain_organic_organic` for the target. Note who appears that the user has not named, and compare against the Chain 0 review-site names. Tier them: direct, platform, status quo, watch list. Mark which names came from review sites, Semrush or both.
 2. `competitors_research` > `domain_domains` for the target plus up to four competitors (five domains max). Pull missing and weak keywords. Cap 30 rows.
 3. `keyword_research` for 6 to 10 head terms: the category term, competitor plus "alternative", target vs competitor, and the main use case. Pull volume, difficulty and intent. Report unknown, never guess.
 4. `keyword_research` > `phrase_organic` for the top 3 or 4 head queries. Record who owns the top 10 and whether any result is competitor-authored. A competitor-written page about the target gets flagged. Check its claims against the target's own pricing and product pages before calling them wrong.
