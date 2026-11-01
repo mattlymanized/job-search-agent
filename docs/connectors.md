@@ -10,6 +10,7 @@ The skills work with what they have and say plainly when something is missing. T
 | A spreadsheet or file skill | Recommended | Edits the tracker while keeping its formatting | The agent edits the file directly and is more likely to lose formatting |
 | Calendar | Optional | Interview dates | You paste dates in |
 | A connected drive, such as Google Drive | Optional | Reads your master resume from a document and saves tailored PDFs to a folder you name | You point the skill at a local file and folder instead |
+| Semrush connector | Optional | Powers `semrush-research-chains`: search competitors, keyword gaps and backlink evidence for a target company. Queries use API units and some reports need a paid plan | The skill stops and says the connector is missing. The other skills are unaffected |
 
 ## How to connect something
 

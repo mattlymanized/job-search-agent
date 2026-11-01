@@ -1,6 +1,6 @@
 {
   "name": "job-search-agent",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Set up a personal job search system: criteria, scoring rubric, verified proof points, a tracker spreadsheet, a daily role scan, interview prep, resume tailoring and company research.",
   "author": {
     "name": "Matt Lyman"
