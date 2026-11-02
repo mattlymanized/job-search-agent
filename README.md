@@ -16,6 +16,7 @@ Built by Matt Lyman, with Claude.
 | `competitive-research` | A sourced, 600-word read on where a company sits in its market, with talking points and open questions. |
 | `resume-tailor` | Tailors your resume to one posting by reordering, cutting and lightly rewording what is already there. Shows you every change in chat first, then builds a designed PDF and an ATS-safe PDF and saves both to your folder. |
 | `product-research` | A deeper pass on what a company actually sells and whether its differentiation holds up against customer reviews. |
+| `semrush-research-chains` | Chained workflows for researching a target company: a review-site scan (G2, Capterra, TrustRadius, Trustpilot), then Semrush search competitors and keyword evidence, backlink authority evidence, and an approval-gated build sequence. The Semrush chains need the Semrush connector. |
 
 ## Download and install
 
